@@ -17,7 +17,7 @@ class MembersController{
 
     public function index() {
         $this->members->open();
-        $this->members->getMembersJoin();
+        $this->members->getMembers();
         $data = array();
         while($row = $this->members->getResult()){
             array_push($data, $row);
@@ -31,10 +31,7 @@ class MembersController{
     public function addView() {
         $this->jenis_membership->open();
         $this->jenis_membership->getJenisMembership();
-        $data = array();
-        while($row = $this->jenis_membership->getResult()){
-            array_push($data, $row);
-        }
+        $data = $this->jenis_membership->getResult();
         $this->jenis_membership->close();
 
         $view = new TambahMembersView();
@@ -43,22 +40,9 @@ class MembersController{
 
     public function editView($id) {
         $this->members->open();
-        $this->jenis_membership->open();
-
         $this->members->getMembersById($id);
-        $this->jenis_membership->getJenisMembership();
-
-        $data = array(
-            'member' => $this->members->getResult(),
-            'jenis_membership' => array()
-        );
-
-        while($row = $this->jenis_membership->getResult()){
-            array_push($data['jenis_membership'], $row);
-        }
-
+        $data = $this->members->getResult();
         $this->members->close();
-        $this->jenis_membership->close();
 
         $view = new EditMembersView();
         $view->render($data);

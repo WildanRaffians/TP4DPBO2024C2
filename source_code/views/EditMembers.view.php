@@ -1,9 +1,10 @@
 <?php
     class EditMembersView{
         public function render($data){
-            $name = $data['name'];
-            $email = $data['email'];
-            $phone = $data['phone'];
+            $name = $data['member']['name'];
+            $email = $data['member']['email'];
+            $phone = $data['member']['phone'];
+            $jenis_membership = $data['member']['jenis_membership'];
             $dataForm = null;
             $dataForm .= '
               <label> NAME: </label>
@@ -15,6 +16,18 @@
               <label> PHONE: </label>
               <input type="text" name="phone" value="'.$phone.'" class="form-control"> <br>
 
+            <label>JENIS MEMBERSHIP: </label>
+                <select class="form-control" id="jenis_membership" name="jenis_membership" required>
+                <option value="">Pilih jenis</option>
+            ';
+
+            foreach($data['jenis_membership'] as $val){
+                list($id, $nama) = $val;
+                $selected = ($id == $jenis_membership) ? 'selected' : '';
+                $dataForm .= '<option value="'.$id.'"'.$selected.'>'.$nama.'</option>';
+              }
+
+            $dataForm .= '</select> <br>
               <button class="btn btn-success" type="submit" name="submit"> Submit </button><br>
               <a class="btn btn-info" type="submit" name="cancel" href="index.php"> Cancel </a><br>
             ';

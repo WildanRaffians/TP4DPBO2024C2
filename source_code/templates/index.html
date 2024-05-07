@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="http://localhost/TP4DPBO2024C2/source_code/templates/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Hello, world!</title>
+    <title>Membership</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">Title</a>
+        <a class="navbar-brand" href="index.php">Membership</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+              <a class="nav-link IDXACTIVE" aria-current="page" href="index.php">Member</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">?</a>
+              <a class="nav-link TRSACTIVE" href="transaksi.php">Transaksi</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">?</a>
+              <a class="nav-link JMACTIVE" href="jenisMembership.php">Jenis Membership</a>
             </li>
           </ul>
         </div>
@@ -31,18 +31,11 @@
     </nav>
     <div class="container my-4">
     <div class="col-1 my-3">
-        <a type="button" class="btn btn-primary nav-link active" href="create.php">Add New</a>
+        <a type="button" class="btn btn-primary nav-link active" href="DATA_ADD_LINK.php?add">Add New</a>
     </div>
     <table class="table">
     <thead>
-      <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>EMAIL</th>
-        <th>PHONE</th>
-        <th>JOINING DATE</th>
-        <th>ACTIONS</th>
-      </tr>
+      DATA_HEAD
     </thead>
     <tbody>
       DATA_TABEL
@@ -51,6 +44,6 @@
       </div>
     
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="http://localhost/TP4DPBO2024C2/source_code/templates/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

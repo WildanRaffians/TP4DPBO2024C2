@@ -1,30 +1,30 @@
 <?php
 include_once("views/Template.class.php");
 include_once("models/DB.class.php");
-include_once("controllers/Members.controller.php");
+include_once("controllers/Transaksi.controller.php");
 
-$members = new MembersController();
+$transaksi = new TransaksiController();
 
 if(isset($_GET['add'])){
   if (isset($_POST['submit'])) {
     //memanggil add
-    $members->add($_POST);
+    $transaksi->add($_POST);
   } else{
-    $members->addView();
+    $transaksi->addView();
   }
 } else if (!empty($_GET['id_edit'])) {
   //memanggil add
   $id = $_GET['id_edit'];
   if (isset($_POST['submit'])) {
-    $members->edit($id, $_POST);
+    $transaksi->edit($id, $_POST);
   } else{
-    $members->editView($id);
+    $transaksi->editView($id);
   }
 } 
 else if (!empty($_GET['id_hapus'])) {
   //memanggil add
   $id = $_GET['id_hapus'];
-  $members->delete($id);
+  $transaksi->delete($id);
 } else{  
-  $members->index();
+  $transaksi->index();
 }
