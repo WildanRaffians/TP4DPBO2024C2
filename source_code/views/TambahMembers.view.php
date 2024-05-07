@@ -1,8 +1,9 @@
 <?php
     class TambahMembersView{
         public function render($data){
+          
+            //form yang akan ditampilkan
             $dataForm = null;
-
             $dataForm .= '
               <label> NAME: </label>
               <input type="text" name="name" class="form-control"> <br>
@@ -27,9 +28,12 @@
             <a class="btn btn-info" type="submit" name="cancel" href="index.php"> Cancel </a><br>
             ';
 
+            $title = 'Add Member';
                 
+            //intansiasi template
             $tpl = new Template("templates/form.html");
 
+            $tpl->replace("DATA_TITLE", $title);
             $tpl->replace("DATA_FORM", $dataForm);
             $tpl->write(); 
         }

@@ -6,6 +6,9 @@ include_once("views/Members.view.php");
 include_once("views/TambahMembers.view.php");
 include_once("views/EditMembers.view.php");
 
+//Controller untuk members
+//Mengatur hubungan view dengan models members
+
 class MembersController{
     private $members;
     private $jenis_membership;
@@ -15,6 +18,7 @@ class MembersController{
         $this->jenis_membership = new JenisMembership(Conf::$db_host, Conf::$db_user, Conf::$db_pass, Conf::$db_name);
     }
 
+    //memberikan data ke view untuk menampilkan tabel
     public function index() {
         $this->members->open();
         $this->members->getMembersJoin();
@@ -28,6 +32,7 @@ class MembersController{
         $view->render($data);
     }
 
+    //menuju add view dengan data yang dibutuhkan
     public function addView() {
         $this->jenis_membership->open();
         $this->jenis_membership->getJenisMembership();
@@ -41,6 +46,7 @@ class MembersController{
         $view->render($data);
     }
 
+    //menuju edit view dengan data yang akan di edit dan data yg dibutuhkan
     public function editView($id) {
         $this->members->open();
         $this->jenis_membership->open();
@@ -64,6 +70,7 @@ class MembersController{
         $view->render($data);
     }
 
+    //melakukan add ke database melalui models
     function add($data){
         $this->members->open();
         $this->members->add($data);
@@ -72,14 +79,16 @@ class MembersController{
         header("location:index.php");
     }
     
+    //melakukan edit ke database melalui models
     function edit($id, $data){
         $this->members->open();
         $this->members->update($id, $data);
         $this->members->close();
-    
+        
         header("location:index.php");
     }
     
+    //melakukan delete ke database melalui models
     function delete($id){
         $this->members->open();
         $this->members->delete($id);

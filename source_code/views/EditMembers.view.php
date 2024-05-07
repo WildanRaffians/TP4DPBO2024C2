@@ -1,10 +1,13 @@
 <?php
     class EditMembersView{
         public function render($data){
+            //Tampung data
             $name = $data['member']['name'];
             $email = $data['member']['email'];
             $phone = $data['member']['phone'];
             $jenis_membership = $data['member']['jenis_membership'];
+
+            //form yang akan ditampilkan dengan data
             $dataForm = null;
             $dataForm .= '
               <label> NAME: </label>
@@ -32,11 +35,14 @@
               <a class="btn btn-info" type="submit" name="cancel" href="index.php"> Cancel </a><br>
             ';
 
+            $title = 'Edit Member';
+            
+            //intansiasi template
             $tpl = new Template("templates/form.html");
 
+            $tpl->replace("DATA_TITLE", $title);
             $tpl->replace("DATA_FORM", $dataForm);
             $tpl->write(); 
         }
     }
-
 ?>

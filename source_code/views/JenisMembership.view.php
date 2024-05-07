@@ -1,9 +1,10 @@
 <?php
     class JenisMembershipView{
         public function render($data){
-
-            $dataJenisMembership = null;
             $dataHead = null;
+            $dataJenisMembership = null;
+
+            //head tabel
             $dataHead .= '
                 <tr>
                     <th>ID</th>
@@ -12,7 +13,8 @@
                     <th>DESKRIPSI</th>
                     <th>ACTIONS</th>
                 </tr>';
-
+            
+            //isi tabel
             foreach($data as $val){
                 list($id, $name, $harga, $deskripsi) = $val;
                 $dataJenisMembership .= "
@@ -28,9 +30,13 @@
                 </tr>
                 ";
             }
-            $tpl = new Template("templates/index.html");
+            
             $jmACT = 'active';
             $addLink = 'jenisMembership';
+            
+            //intansiasi template
+            $tpl = new Template("templates/index.html");
+
             $tpl->replace("JMACTIVE", $jmACT);
             $tpl->replace("DATA_TABEL", $dataJenisMembership);
             $tpl->replace("DATA_HEAD", $dataHead);

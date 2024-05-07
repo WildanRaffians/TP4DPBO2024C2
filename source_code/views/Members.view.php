@@ -4,6 +4,7 @@
             $dataMembers = null;
             $dataHead = null;
 
+            //head tabel
             $dataHead .= '
                 <tr>
                     <th>ID</th>
@@ -15,6 +16,7 @@
                     <th>ACTIONS</th>
                 </tr>';
 
+            //isi tabel
             foreach($data as $val){
                 $id = $val['id'];
                 $name = $val['name'];
@@ -37,12 +39,14 @@
                 </tr>
                 ";
             }
-            $tpl = new Template("templates/index.html");
+
             $idxACT = 'active';
             $addLink = 'index';
+            
+            //intansiasi template
+            $tpl = new Template("templates/index.html");
 
             $tpl->replace("IDXACTIVE", $idxACT);
-
             $tpl->replace("DATA_TABEL", $dataMembers);
             $tpl->replace("DATA_HEAD", $dataHead);
             $tpl->replace("DATA_ADD_LINK", $addLink);

@@ -6,25 +6,35 @@ include_once("controllers/Members.controller.php");
 $members = new MembersController();
 
 if(isset($_GET['add'])){
+  //Jika tombol add new ditekan
   if (isset($_POST['submit'])) {
+    //jika submit ditekan
     //memanggil add
     $members->add($_POST);
   } else{
+    //jika tidak, tampilkan form
     $members->addView();
   }
 } else if (!empty($_GET['id_edit'])) {
-  //memanggil add
+  //jika mendapat id_edit (tombol edit ditekan)
+  //tampung id
   $id = $_GET['id_edit'];
   if (isset($_POST['submit'])) {
+    //jika submit ditekan
+    //panggil edit
     $members->edit($id, $_POST);
   } else{
+    //jika tidak, tampilkan form edit
     $members->editView($id);
   }
-} 
-else if (!empty($_GET['id_hapus'])) {
-  //memanggil add
+} else if (!empty($_GET['id_hapus'])) {
+  //jika mendapat id_hapus (tombol hapus ditekan)
+  //tampung id
   $id = $_GET['id_hapus'];
+  //panggil hapus
   $members->delete($id);
-} else{  
+} else{ 
+  //jika tidak ada tombol yg ditekan
+  //menampilkan tabel members
   $members->index();
 }

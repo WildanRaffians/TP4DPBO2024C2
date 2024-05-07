@@ -4,6 +4,7 @@
             $dataMembers = null;
             $dataHead = null;
 
+            //head tabel
             $dataHead .= '
                 <tr>
                     <th>ID</th>
@@ -13,6 +14,7 @@
                     <th>ACTIONS</th>
                 </tr>';
 
+            //isi tabel
             foreach($data as $val){
                 $id = $val['id_transaksi'];
                 $name = $val['name'];
@@ -31,12 +33,14 @@
                 </tr>
                 ";
             }
-            $tpl = new Template("templates/index.html");
+            
             $trsACT = 'active';
             $addLink = 'transaksi';
 
-            $tpl->replace("TRSACTIVE", $trsACT);
+            //intansiasi template
+            $tpl = new Template("templates/index.html");
 
+            $tpl->replace("TRSACTIVE", $trsACT);
             $tpl->replace("DATA_TABEL", $dataMembers);
             $tpl->replace("DATA_HEAD", $dataHead);
             $tpl->replace("DATA_ADD_LINK", $addLink);

@@ -9,6 +9,9 @@ include_once("views/TambahTransaksi.view.php");
 include_once("views/EditMembers.view.php");
 include_once("views/EditTransaksi.view.php");
 
+//Controller untuk transaksi
+//Mengatur hubungan view dengan models members
+
 class TransaksiController{
     private $transaksi;
     private $members;
@@ -18,6 +21,7 @@ class TransaksiController{
         $this->members = new Members(Conf::$db_host, Conf::$db_user, Conf::$db_pass, Conf::$db_name);
     }
 
+    //memberikan data ke view untuk menampilkan tabel
     public function index() {
         $this->transaksi->open();
         $this->transaksi->getTransaksiJoin();
@@ -31,6 +35,7 @@ class TransaksiController{
         $view->render($data);
     }
 
+    //menuju add view dengan data yang dibutuhkan
     public function addView() {
         $this->members->open();
         $this->members->getMembers();
@@ -44,6 +49,7 @@ class TransaksiController{
         $view->render($data);
     }
 
+    //menuju edit view dengan data yang akan di edit dan data yg dibutuhkan
     public function editView($id) {
         $this->transaksi->open();
         $this->members->open();
@@ -67,6 +73,7 @@ class TransaksiController{
         $view->render($data);
     }
 
+    //melakukan add ke database melalui models
     function add($data){
         $this->transaksi->open();
         $this->transaksi->add($data);
@@ -75,6 +82,7 @@ class TransaksiController{
         header("location:transaksi.php");
     }
     
+    //melakukan edit ke database melalui models
     function edit($id, $data){
         $this->transaksi->open();
         $this->transaksi->update($id, $data);
@@ -83,6 +91,7 @@ class TransaksiController{
         header("location:transaksi.php");
     }
     
+    //melakukan delete ke database melalui models
     function delete($id){
         $this->transaksi->open();
         $this->transaksi->delete($id);
