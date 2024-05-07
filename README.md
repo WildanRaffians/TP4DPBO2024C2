@@ -23,7 +23,7 @@ Program ini memiliki 3 tabel, yaitu members, jenis membership dan tranksaksi.
 </li>
 
 <h3>Alur Program</h3>
-KEtika program dijalankan maka akan menampilkan halaman depan berupa tabel dari members. Disini user dapat menambahkan data dengan menekan tombol add new, Pada setiap data memiliki tombol edit dan hapus di kolom paling kanannya. User dapat menekan tombol-tombol tersebut untuk mengedit data atau menghapus data. Pada bagian navbar terdapat opsi transaksi untuk pergi ke halaman tabel transaksi dan opsi jenis membership untuk pergi ke tabel membership. Pada halaman transaksi dan jenis membership sama seperti pada halaman depan yaitu terdapat tombol add new dan pada setiap data terdapat tombol edit dan hapus.
+Ketika program dijalankan maka akan menampilkan halaman depan berupa tabel dari members. Disini user dapat menambahkan data dengan menekan tombol add new, Pada setiap data memiliki tombol edit dan hapus di kolom paling kanannya. User dapat menekan tombol-tombol tersebut untuk mengedit data atau menghapus data. Pada bagian navbar terdapat opsi transaksi untuk pergi ke halaman tabel transaksi dan opsi jenis membership untuk pergi ke tabel membership. Pada halaman transaksi dan jenis membership sama seperti pada halaman depan yaitu terdapat tombol add new dan pada setiap data terdapat tombol edit dan hapus.
 
 <h3>Dokumentasi</h3>
 
