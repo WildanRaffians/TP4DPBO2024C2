@@ -8,7 +8,13 @@ seperti yang telah dispesifikasikan. Aamiin
 Menerapkan konsep arsitektur MVC (Model-View-Controller) menggunakan PHP dan mengimplementasikannya dalam bentuk GUI. 
 
 <h3>Note</h3>
-Jika ingin menjalankan program. Simpan folder TP4DPBO2024C2 di dalam folder htdocs (jangan hanya source_code saja). Jalankan dengan localhost/TP4DPBO2024C2/source_code. Jika tidak maka css tidak akan terpasang karena link css dipanggil dari folder TP4DPBO2024C2 (http://localhost/TP4DPBO2024C2/source_code/...).
+Jika ingin menjalankan program. 
+<li>  
+  Simpan folder TP4DPBO2024C2 di dalam folder htdocs (jangan hanya source_code saja). Jalankan dengan localhost/TP4DPBO2024C2/source_code. 
+</li>
+<li>
+  Jika tidak maka css tidak akan terpasang karena link css dipanggil dari folder TP4DPBO2024C2 (http://localhost/TP4DPBO2024C2/source_code/...).
+</li>
 
 <h3>Desain Program</h3>
 
