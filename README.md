@@ -21,3 +21,6 @@ Program ini memiliki 3 tabel, yaitu members, jenis membership dan tranksaksi.
 <li>
   Tabel transaksi berisi seakan log transaksi yang telah dilakukan oleh members. Terdiri dari kolom id, member(berelasi many to one ke tabel members), jumlah transaksi/pembayaran, dan waktu transaksi.
 </li>
+
+<h3>Alur Program</h3>
+KEtika program dijalankan maka akan menampilkan halaman depan berupa tadil dari members. Disini user dapat menambahkan data dengan menekan tombol add new, 
